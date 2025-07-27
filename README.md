@@ -30,8 +30,7 @@ To help users manage their fitness, diet, and mental well-being through personal
 | AI         | OpenAI API / HuggingFace Transformers |
 
 ##  UI Design
-https://www.figma.com/proto/7HN5CHBzEvqPtylXhlPO9x/Fitness-Website--Community---Copy-?node-id=2-738&t=C4c3yp7BSgSyAC0q-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A738
-remain incomplete 
+https://www.canva.com/design/DAGuUhfP42Q/5iCrUJAQqtBaqp7BFGTl7Q/edit?utm_content=DAGuUhfP42Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
 
 ---
 
