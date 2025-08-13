@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Outlet, Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "./store/authSlice";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const dispatch = useDispatch();
+  const { token, user } = useSelector((s) => s.auth);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <nav>
+        <Link to="/">FitMind</Link>
+        <div>
+          {!token && (
+            <>
+              <Link to="/login">Login</Link>{" "}
+              <Link to="/register">Register</Link>
+            </>
+          )}
+          {token && (
+            <>
+              <span>Hi {user?.name || "there"}</span>{" "}
+              <button onClick={() => dispatch(logout())}>Logout</button>
+            </>
+          )}
+        </div>
+      </nav>
+      <div className="container">
+        <Outlet />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
-
-export default App
