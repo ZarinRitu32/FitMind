@@ -16,8 +16,8 @@ export default function AppRouter() {
   return (
     <Routes>
       <Route path="/" element={<App />}>
-        {/* Root path shows dashboard */}
-        <Route index element={<Dashboard />} />
+        {/* Default route → Login */}
+        <Route index element={<Login />} />
 
         {/* Public Routes */}
         <Route path="login" element={<Login />} />
@@ -25,13 +25,14 @@ export default function AppRouter() {
         <Route path="about" element={<AboutUs />} />
         <Route path="contact" element={<ContactUs />} />
 
-        {/* Other pages */}
+        {/* After login */}
+        <Route path="dashboard" element={<Dashboard />} />
         <Route path="workouts" element={<Workouts />} />
         <Route path="nutrition" element={<Nutrition />} />
         <Route path="mental-health" element={<MentalHealth />} />
 
-        {/* Catch-all redirect to dashboard */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        {/* Catch-all redirect to login */}
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Route>
     </Routes>
   );

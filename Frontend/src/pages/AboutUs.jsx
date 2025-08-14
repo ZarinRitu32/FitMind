@@ -3,43 +3,58 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-gray-50 px-6 py-12 md:px-24 text-gray-800">
-      <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8">
-        <h1 className="text-4xl font-bold text-green-600 mb-6 text-center">
-          About FitMind
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-gray-50 px-6 py-12 md:px-24 text-gray-800">
+      {/* Hero Section */}
+      <div className="max-w-4xl mx-auto text-center mb-12">
+        <h1 className="text-5xl font-extrabold text-green-600 mb-4">
+          About <span className="text-green-500">FitMind</span>
         </h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Your all-in-one companion for <span className="font-semibold">fitness</span>,
+          <span className="font-semibold"> nutrition</span>, and{" "}
+          <span className="font-semibold">mental wellness</span>. Because a healthy body
+          starts with a healthy mind.
+        </p>
+      </div>
 
-        <p className="mb-4 text-lg">
-          <strong>FitMind</strong> is your all-in-one companion for fitness, nutrition, and mental
-          wellness. We believe a healthy mind is just as important as a healthy body —
-          and our app is designed to help you improve both.
+      {/* Content Card */}
+      <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-xl p-8">
+        <p className="mb-4 text-lg leading-relaxed">
+          <strong>FitMind</strong> helps you track workouts, plan meals, and build strong
+          mental habits — all in one place. We believe health is a balance between mind and body,
+          and our app is designed to help you strengthen both.
         </p>
 
-        <p className="mb-4 text-lg">
-          Whether you're tracking your workouts, planning meals, or taking time for
-          mindfulness, FitMind gives you the tools and motivation to stay on track.
+        <p className="mb-4 text-lg leading-relaxed">
+          Whether you're just starting your journey or looking to push your limits, FitMind
+          provides the tools, guidance, and motivation you need to succeed.
         </p>
 
-        <p className="mb-4 text-lg">
-          Our mission is to empower people of all fitness levels to achieve their goals with
-          a balanced and sustainable approach. We’re not just about fitness — we’re about
-          building strong habits for life.
+        <p className="mb-4 text-lg leading-relaxed">
+          Our mission is simple — make fitness and wellness accessible, enjoyable, and sustainable
+          for everyone.
         </p>
 
-        <div className="mt-6">
-          <h2 className="text-2xl font-semibold text-green-500 mb-2">Why FitMind?</h2>
-          <ul className="list-disc list-inside space-y-2 text-base">
-            <li>Track your workouts and progress easily</li>
-            <li>Personalized nutrition support</li>
-            <li>Guided tools for mental well-being</li>
-            <li>Daily motivation with inspiring quotes</li>
-            <li>Simple, clean, and user-friendly design</li>
+        {/* Why Choose Us */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-semibold text-green-500 mb-4">
+            Why Choose FitMind?
+          </h2>
+          <ul className="list-disc list-inside space-y-2 text-base text-gray-700">
+            <li>Track your workouts and progress with ease</li>
+            <li>Personalized nutrition guidance</li>
+            <li>Guided tools for stress management & mindfulness</li>
+            <li>Daily motivational quotes & reminders</li>
+            <li>Clean, intuitive, and user-friendly design</li>
           </ul>
         </div>
 
-        <p className="mt-6 text-center italic text-gray-600">
-          “Your body achieves what your mind believes.”
-        </p>
+        {/* Quote */}
+        <div className="mt-8 text-center border-t pt-6">
+          <p className="italic text-lg text-gray-500">
+            “Your body achieves what your mind believes.”
+          </p>
+        </div>
       </div>
     </div>
   );
