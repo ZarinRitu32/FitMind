@@ -1,18 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-// import other pages...
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
-function App() {
+export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        {/* Add dashboard or home routes */}
-      </Routes>
-    </Router>
+    <div className="min-h-screen flex flex-col">
+      {/* Navbar always visible */}
+      <Navbar />
+
+      {/* Page content */}
+      <main className="flex-grow p-4 bg-gray-50">
+        <Outlet />
+      </main>
+    </div>
   );
 }
-
-export default App;
