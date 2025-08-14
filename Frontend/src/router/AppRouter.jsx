@@ -1,6 +1,5 @@
 // src/router/AppRouter.jsx
 import { Routes, Route, Navigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import App from "../App";
 
 // Pages
@@ -13,57 +12,26 @@ import MentalHealth from "../pages/MentalHealth";
 import AboutUs from "../pages/AboutUs";
 import ContactUs from "../pages/ContactUs";
 
-function ProtectedRoute({ children }) {
-  const { token } = useSelector((s) => s.auth);
-  return token ? children : <Navigate to="/login" replace />;
-}
-
 export default function AppRouter() {
   return (
     <Routes>
       <Route path="/" element={<App />}>
+        {/* Root path shows dashboard */}
+        <Route index element={<Dashboard />} />
+
         {/* Public Routes */}
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="about" element={<AboutUs />} />
         <Route path="contact" element={<ContactUs />} />
 
-        {/* Protected Routes */}
-        <Route
-          path="dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="workouts"
-          element={
-            <ProtectedRoute>
-              <Workouts />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="nutrition"
-          element={
-            <ProtectedRoute>
-              <Nutrition />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="mental-health"
-          element={
-            <ProtectedRoute>
-              <MentalHealth />
-            </ProtectedRoute>
-          }
-        />
+        {/* Other pages */}
+        <Route path="workouts" element={<Workouts />} />
+        <Route path="nutrition" element={<Nutrition />} />
+        <Route path="mental-health" element={<MentalHealth />} />
 
-        {/* Catch-all */}
-        <Route path="*" element={<Navigate to="/login" replace />} />
+        {/* Catch-all redirect to dashboard */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
   );
