@@ -1,6 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    // Normally you would check credentials here
+    navigate("/dashboard"); // Redirect to dashboard
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-50">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
@@ -49,7 +56,10 @@ export default function Login() {
         </div>
 
         {/* Login Button */}
-        <button className="w-full bg-white border border-gray-300 py-2 rounded-lg font-semibold hover:bg-gray-100">
+        <button
+          onClick={handleLogin}
+          className="w-full bg-white border border-gray-300 py-2 rounded-lg font-semibold hover:bg-gray-100"
+        >
           LOGIN
         </button>
 

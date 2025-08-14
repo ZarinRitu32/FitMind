@@ -1,10 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Register() {
+  const navigate = useNavigate();
+
+  const handleRegister = () => {
+    // Here you could also add form validation or API call to save user
+    navigate("/dashboard");
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-50">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
-        
         {/* Logo / Brand */}
         <div className="text-center mb-4">
           <h1 className="text-blue-600 font-bold text-lg cursor-pointer">FitMind</h1>
@@ -63,7 +69,10 @@ export default function Register() {
         </div>
 
         {/* Register Button */}
-        <button className="w-full bg-white border border-gray-300 py-2 rounded-lg font-semibold hover:bg-gray-100">
+        <button
+          onClick={handleRegister}
+          className="w-full bg-white border border-gray-300 py-2 rounded-lg font-semibold hover:bg-gray-100"
+        >
           REGISTER
         </button>
 

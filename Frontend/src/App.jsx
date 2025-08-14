@@ -1,16 +1,17 @@
-import { Outlet } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Register from "./pages/Register";
 
-export default function App() {
+function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Navbar always visible */}
-      <Navbar />
-
-      {/* Page content */}
-      <main className="flex-grow p-4 bg-gray-50">
-        <Outlet />
-      </main>
-    </div>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
   );
 }
+
+export default App;
