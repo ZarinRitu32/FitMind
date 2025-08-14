@@ -29,17 +29,17 @@ export default function Dashboard() {
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
-          <h3 className="text-xl font-semibold mb-2">🏋️‍♂️ Workouts</h3>
+          <h3 className="text-xl font-semibold mb-2"> Workouts</h3>
           <p className="text-3xl font-bold text-green-500">12</p>
           <p className="text-gray-500 text-sm">Sessions this month</p>
         </div>
         <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
-          <h3 className="text-xl font-semibold mb-2">🥗 Nutrition</h3>
+          <h3 className="text-xl font-semibold mb-2"> Nutrition</h3>
           <p className="text-3xl font-bold text-green-500">85%</p>
           <p className="text-gray-500 text-sm">Meal plan completed</p>
         </div>
         <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
-          <h3 className="text-xl font-semibold mb-2">🧘 Meditation</h3>
+          <h3 className="text-xl font-semibold mb-2"> Mental Health</h3>
           <p className="text-3xl font-bold text-green-500">6 hrs</p>
           <p className="text-gray-500 text-sm">This week</p>
         </div>
