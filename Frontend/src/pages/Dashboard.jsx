@@ -1,11 +1,33 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+const quotes = [
+  "Your body achieves what your mind believes.",
+  "Push yourself, because no one else is going to do it for you.",
+  "Fitness is not about being better than someone else, it’s about being better than you used to be.",
+  "Don’t limit your challenges. Challenge your limits.",
+  "Mental strength is not the absence of fear, but the will to overcome it.",
+  "Discipline is choosing between what you want now and what you want most.",
+  "Every workout counts. Don’t stop now.",
+  "You are one workout away from a good mood."
+];
 
 export default function Dashboard() {
+  const [quote, setQuote] = useState("");
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    setQuote(quotes[randomIndex]);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      {/* Header */}
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-3xl font-bold text-green-600">FitMind Dashboard</h2>
+    <div
+      className="min-h-screen bg-cover bg-center flex flex-col justify-between px-6 md:px-16 py-10 text-white"
+      style={{ backgroundImage: 'url("/images/fitness-bg.png")' }}
+    >
+      {/* Top Navigation */}
+      <div className="flex justify-between items-center mb-10 bg-black/60 p-4 rounded-xl shadow-md">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-green-400">FitMind</h2>
         <div className="flex gap-4">
           <Link
             to="/login"
@@ -22,49 +44,47 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <p className="text-gray-600 mb-8">
-        Welcome back! Track your fitness, diet, and mental wellness progress.
-      </p>
-
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
-          <h3 className="text-xl font-semibold mb-2"> Workouts</h3>
-          <p className="text-3xl font-bold text-green-500">12</p>
-          <p className="text-gray-500 text-sm">Sessions this month</p>
-        </div>
-        <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
-          <h3 className="text-xl font-semibold mb-2"> Nutrition</h3>
-          <p className="text-3xl font-bold text-green-500">85%</p>
-          <p className="text-gray-500 text-sm">Meal plan completed</p>
-        </div>
-        <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
-          <h3 className="text-xl font-semibold mb-2"> Mental Health</h3>
-          <p className="text-3xl font-bold text-green-500">6 hrs</p>
-          <p className="text-gray-500 text-sm">This week</p>
-        </div>
+      {/* Motivation Quote */}
+      <div className="bg-black/50 p-6 rounded-xl max-w-3xl mx-auto text-center shadow-lg">
+        <p className="italic text-xl font-semibold text-green-300">"{quote}"</p>
       </div>
 
-      {/* Progress Section */}
-      <div className="bg-white shadow-lg rounded-2xl p-6 mt-8">
-        <h3 className="text-xl font-semibold mb-4">📈 Your Progress</h3>
-        <p className="text-gray-600 mb-4">
-          Keep going! You're building great habits for your body and mind.
-        </p>
-        <div className="w-full bg-gray-200 rounded-full h-4">
-          <div
-            className="bg-green-500 h-4 rounded-full"
-            style={{ width: "70%" }}
-          ></div>
-        </div>
-        <p className="text-gray-500 text-sm mt-2">70% Goal Completion</p>
+      {/* Feature Buttons */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <Link
+          to="/workouts"
+          className="bg-white/80 text-black font-semibold text-lg shadow-lg rounded-2xl p-8 text-center hover:bg-white transition cursor-pointer"
+        >
+          Workouts
+        </Link>
+        <Link
+          to="/nutrition"
+          className="bg-white/80 text-black font-semibold text-lg shadow-lg rounded-2xl p-8 text-center hover:bg-white transition cursor-pointer"
+        >
+          Nutrition
+        </Link>
+        <Link
+          to="/mental-health"
+          className="bg-white/80 text-black font-semibold text-lg shadow-lg rounded-2xl p-8 text-center hover:bg-white transition cursor-pointer"
+        >
+          Mental Health
+        </Link>
       </div>
 
-      {/* Motivation */}
-      <div className="mt-8 bg-green-100 border-l-4 border-green-500 p-4 rounded">
-        <p className="text-green-700 italic">
-          "Your body achieves what your mind believes."
-        </p>
+      {/* Footer */}
+      <div className="flex justify-center gap-8 mt-12 bg-black/60 p-4 rounded-xl">
+        <Link
+          to="/about"
+          className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition"
+        >
+          About Us
+        </Link>
+        <Link
+          to="/contact"
+          className="bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition"
+        >
+          Contact Us
+        </Link>
       </div>
     </div>
   );
