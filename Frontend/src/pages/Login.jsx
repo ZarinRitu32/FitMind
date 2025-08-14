@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Login() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-50">
@@ -6,7 +8,7 @@ export default function Login() {
         {/* Logo / Brand */}
         <div className="text-center mb-4">
           <h1 className="text-blue-600 font-bold text-lg cursor-pointer">FitMind</h1>
-          <p className="text-blue-500 text-sm cursor-pointer">LoginRegister</p>
+          <p className="text-blue-500 text-sm cursor-pointer">Login</p>
         </div>
 
         {/* Form Title */}
@@ -54,9 +56,9 @@ export default function Login() {
         {/* Signup */}
         <p className="mt-4 text-center text-sm">
           Not a member?{" "}
-          <a href="#" className="text-blue-500 hover:underline">
+          <Link to="/register" className="text-blue-500 hover:underline">
             Signup now
-          </a>
+          </Link>
         </p>
       </div>
     </div>
