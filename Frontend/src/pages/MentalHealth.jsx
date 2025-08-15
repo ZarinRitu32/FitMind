@@ -1,43 +1,52 @@
-import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-const MentalHealth = () => {
+const activities = [
+  { title:"Morning Meditation",time:"10 min",type:"Guided Audio" },
+  { title:"Deep Breathing Exercise",time:"5 min",type:"Relaxation" },
+  { title:"Gratitude Journaling",time:"15 min",type:"Mindfulness" },
+  { title:"Yoga Flow", time: "20 min",type:"Stretch & Relax" },
+];
+
+export default function MentalHealth() {
+  const navigate=useNavigate();
+
   return (
-    <div className="min-h-screen bg-blue-50 px-6 py-12 md:px-24 text-gray-800">
-      <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-lg p-8">
-        <h1 className="text-4xl font-bold text-blue-600 mb-6 text-center">
-          Mental Health & Wellbeing
-        </h1>
+    <div className="min-h-screen bg-gray-50 p-6">
+      <div className="max-w-6xl mx-auto">
 
-        <p className="mb-4 text-lg">
-          At <strong>FitMind</strong>, we believe that mental health is just as important as physical fitness.
-          Balancing your thoughts and emotions plays a critical role in your overall well-being.
-        </p>
+        <button
+          onClick={() => navigate("/dashboard")}
+          className="mb-6 bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300"
+        >
+          Back to Dashboard
+        </button>
 
-        <p className="mb-4 text-lg">
-          Whether you're looking to manage stress, build resilience, or simply take time to breathe,
-          we offer guidance to help you along the way.
-        </p>
-
-        <div className="mt-6">
-          <h2 className="text-2xl font-semibold text-blue-500 mb-3">What You’ll Find Here:</h2>
-          <ul className="list-disc list-inside space-y-2 text-base">
-            <li>Daily mindfulness and meditation exercises</li>
-            <li>Journaling prompts for self-reflection</li>
-            <li>Tips to manage anxiety and stress</li>
-            <li>Motivational quotes and mental strength practices</li>
-            <li>Expert resources and helplines</li>
-          </ul>
+        <div className="mb-8 text-center">
+          <h1 className="text-4xl font-bold text-purple-600">Mental Health</h1>
+          <p className="text-gray-600 mt-2">
+            Take time to care for your mind as much as your body.
+          </p>
         </div>
 
-        <div className="mt-8 bg-blue-100 border-l-4 border-blue-500 p-4 rounded">
-          <p className="italic text-blue-800 text-lg">
-            "Mental strength is not the ability to stay out of the darkness, it’s the ability to sit
-            present in the darkness knowing the light will shine again."
-          </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {activities.map((a, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition"
+            >
+              <h2 className="text-xl font-bold text-gray-800">{a.title}</h2>
+              <p className="text-gray-500">{a.time}</p>
+              <p className="text-sm text-gray-400 mb-4">{a.type}</p>
+              <Link
+                to="#"
+                className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600"
+              >
+                Try Now
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
-};
-
-export default MentalHealth;
+}
