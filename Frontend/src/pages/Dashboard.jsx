@@ -38,23 +38,23 @@ export default function Dashboard() {
           Join Now
         </button>
 
-        {/* ✅ Moved Up Buttons (smaller size) */}
+        {/* ✅ Smaller Navigation Buttons */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl">
           <Link
             to="/workouts"
-            className="bg-blue-500 hover:bg-blue-600 text-white text-center font-semibold text-md rounded-xl shadow-md p-6 transition"
+            className="bg-blue-500 hover:bg-blue-600 text-white text-center font-semibold text-sm rounded-lg shadow-md p-3 transition"
           >
             Workouts
           </Link>
           <Link
             to="/nutrition"
-            className="bg-green-500 hover:bg-green-600 text-white text-center font-semibold text-md rounded-xl shadow-md p-6 transition"
+            className="bg-green-500 hover:bg-green-600 text-white text-center font-semibold text-sm rounded-lg shadow-md p-3 transition"
           >
             Nutrition
           </Link>
           <Link
             to="/mental-health"
-            className="bg-purple-500 hover:bg-purple-600 text-white text-center font-semibold text-md rounded-xl shadow-md p-6 transition"
+            className="bg-purple-500 hover:bg-purple-600 text-white text-center font-semibold text-sm rounded-lg shadow-md p-3 transition"
           >
             Mental Health
           </Link>
