@@ -12,6 +12,12 @@ import MentalHealth from "../pages/MentalHealth";
 import AboutUs from "../pages/AboutUs";
 import ContactUs from "../pages/ContactUs";
 
+// New Pages
+import MorningMeditation from "../pages/MorningMeditation";
+import DeepBreathing from "../pages/DeepBreathing";
+import GratitudeJournaling from "../pages/GratitudeJournaling";
+import YogaFlow from "../pages/YogaFlow";
+
 export default function AppRouter() {
   return (
     <Routes>
@@ -30,6 +36,12 @@ export default function AppRouter() {
         <Route path="workouts" element={<Workouts />} />
         <Route path="nutrition" element={<Nutrition />} />
         <Route path="mental-health" element={<MentalHealth />} />
+
+        {/* New Wellness Pages */}
+        <Route path="morning-meditation" element={<MorningMeditation />} />
+        <Route path="deep-breathing" element={<DeepBreathing />} />
+        <Route path="gratitude-journaling" element={<GratitudeJournaling />} />
+        <Route path="yoga-flow" element={<YogaFlow />} />
 
         {/* Catch-all redirect to login */}
         <Route path="*" element={<Navigate to="/login" replace />} />
