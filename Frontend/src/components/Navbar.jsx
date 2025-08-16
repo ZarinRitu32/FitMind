@@ -22,6 +22,32 @@ export default function Navbar() {
           {token ? (
             <>
               <span className="text-white font-medium">Hello, {user}</span>
+
+              {/* Profile Link styled like Login/Register */}
+              <Link
+                to="/profile"
+                className="text-white hover:text-gray-200 font-medium transition"
+              >
+                Profile
+              </Link>
+
+              {/* About Us */}
+              <Link
+                to="/about"
+                className="text-white hover:text-gray-200 font-medium transition"
+              >
+                About Us
+              </Link>
+
+              {/* Contact Us */}
+              <Link
+                to="/contact"
+                className="text-white hover:text-gray-200 font-medium transition"
+              >
+                Contact Us
+              </Link>
+
+              {/* Logout Button */}
               <button
                 onClick={() => dispatch(logout())}
                 className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md transition"
@@ -31,17 +57,36 @@ export default function Navbar() {
             </>
           ) : (
             <>
+              {/* Login */}
               <Link
                 to="/login"
                 className="text-white hover:text-gray-200 font-medium transition"
               >
                 Login
               </Link>
+
+              {/* Register */}
               <Link
                 to="/register"
                 className="text-white hover:text-gray-200 font-medium transition"
               >
                 Register
+              </Link>
+
+              {/* About Us */}
+              <Link
+                to="/about"
+                className="text-white hover:text-gray-200 font-medium transition"
+              >
+                About Us
+              </Link>
+
+              {/* Contact Us */}
+              <Link
+                to="/contact"
+                className="text-white hover:text-gray-200 font-medium transition"
+              >
+                Contact Us
               </Link>
             </>
           )}
