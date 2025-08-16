@@ -1,3 +1,4 @@
+// src/pages/Dashboard.jsx
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -21,70 +22,43 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div
-      className="min-h-screen bg-cover bg-center flex flex-col justify-between px-6 md:px-16 py-10 text-white"
-      style={{ backgroundImage: 'url("/images/fitness-bg.png")' }}
-    >
-      {/* Top Navigation */}
-      <div className="flex justify-between items-center mb-10 bg-black/60 p-4 rounded-xl shadow-md">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-green-400">FitMind</h2>
-        <div className="flex gap-4">
+    <div className="min-h-screen bg-gray-100 flex flex-col text-center">
+      {/* ✅ Hero Section */}
+      <div className="flex flex-col items-center justify-center py-16 px-6">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-800">
+          GET FIT WITH US
+        </h2>
+        <p className="text-lg md:text-xl italic text-green-600 mb-6">
+          "{quote}"
+        </p>
+        <button
+          onClick={() => (window.location.href = "/profile")}
+          className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-orange-600 transition mb-10"
+        >
+          Join Now
+        </button>
+
+        {/* ✅ Moved Up Buttons (smaller size) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl">
           <Link
-            to="/login"
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+            to="/workouts"
+            className="bg-blue-500 hover:bg-blue-600 text-white text-center font-semibold text-md rounded-xl shadow-md p-6 transition"
           >
-            Login
+            Workouts
           </Link>
           <Link
-            to="/register"
-            className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition"
+            to="/nutrition"
+            className="bg-green-500 hover:bg-green-600 text-white text-center font-semibold text-md rounded-xl shadow-md p-6 transition"
           >
-            Register
+            Nutrition
+          </Link>
+          <Link
+            to="/mental-health"
+            className="bg-purple-500 hover:bg-purple-600 text-white text-center font-semibold text-md rounded-xl shadow-md p-6 transition"
+          >
+            Mental Health
           </Link>
         </div>
-      </div>
-
-      {/* Motivation Quote */}
-      <div className="bg-black/50 p-6 rounded-xl max-w-3xl mx-auto text-center shadow-lg">
-        <p className="italic text-xl font-semibold text-green-300">"{quote}"</p>
-      </div>
-
-      {/* Feature Buttons */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-        <Link
-          to="/workouts"
-          className="bg-white/80 text-black font-semibold text-lg shadow-lg rounded-2xl p-8 text-center hover:bg-white transition cursor-pointer"
-        >
-          Workouts
-        </Link>
-        <Link
-          to="/nutrition"
-          className="bg-white/80 text-black font-semibold text-lg shadow-lg rounded-2xl p-8 text-center hover:bg-white transition cursor-pointer"
-        >
-          Nutrition
-        </Link>
-        <Link
-          to="/mental-health"
-          className="bg-white/80 text-black font-semibold text-lg shadow-lg rounded-2xl p-8 text-center hover:bg-white transition cursor-pointer"
-        >
-          Mental Health
-        </Link>
-      </div>
-
-      {/* Footer */}
-      <div className="flex justify-center gap-8 mt-12 bg-black/60 p-4 rounded-xl">
-        <Link
-          to="/about"
-          className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition"
-        >
-          About Us
-        </Link>
-        <Link
-          to="/contact"
-          className="bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition"
-        >
-          Contact Us
-        </Link>
       </div>
     </div>
   );
