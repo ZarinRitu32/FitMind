@@ -1,5 +1,3 @@
-import React from "react";
-
 const AboutUs = () => {
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-64px)] bg-gradient-to-r from-blue-100 to-purple-100 px-4">
