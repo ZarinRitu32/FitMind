@@ -51,3 +51,7 @@ We are using **GitHub Projects** to manage tasks.
 -Zarin Tasnim Ritu : https://wakatime.com/@08b745eb-b39d-4bf2-bff5-73aa8face5ab/projects/mwfqzbvqxo?start=2025-08-11&end=2025-08-17
 
 -Shamima Islam Ria : https://wakatime.com/@3bb182d4-41c6-4d00-85a9-f1754366727c/projects/uxuuvjojko?start=2025-08-11&end=2025-08-17
+
+-Mohsina Rahman Mirza : https://wakatime.com/@e7e8ef8a-d66c-4ca7-9884-16c5f908aa25/projects/pbwpubwhta?start=2025-08-11&end=2025-08-17
+
+-Anjum Hossain : https://wakatime.com/@f696711c-8bf0-4184-a465-9f0ba0277b40/projects/qblnahuhcj?start=2025-08-11&end=2025-08-17
