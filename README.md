@@ -47,3 +47,5 @@ We are using **GitHub Projects** to manage tasks.
 ### ✅ Task Management
 - Issues are created and assigned to team members
 - Features grouped into milestones
+### Waka time
+-Zarin Tasnim Ritu : https://wakatime.com/projects/FitMind
