@@ -49,3 +49,4 @@ We are using **GitHub Projects** to manage tasks.
 - Features grouped into milestones
 ### wakatime URL
 -Zarin Tasnim Ritu : https://wakatime.com/projects/FitMind
+-Shamima Islam Ria : https://wakatime.com/projects/FitMind
