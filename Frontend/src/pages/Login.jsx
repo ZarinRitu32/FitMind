@@ -1,72 +1,68 @@
+// src/pages/Login.jsx
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // Normally you would check credentials here
-    navigate("/dashboard"); // Redirect to dashboard
+    // এখানে form validation বা API call যোগ করা যাবে
+    navigate("/dashboard");
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-50">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
-        
-        {/* Logo / Brand */}
-        <div className="text-center mb-4">
-          <h1 className="text-blue-600 font-bold text-lg cursor-pointer">FitMind</h1>
-          <p className="text-blue-500 text-sm cursor-pointer">Login</p>
+    <div className="flex justify-center items-center min-h-[calc(100vh-64px)] bg-gradient-to-r from-blue-100 to-purple-100">
+      <div className="w-full max-w-xs bg-white rounded-lg shadow-md p-4">
+        {/* Header */}
+        <div className="text-center mb-2">
+          <h1 className="text-xl font-bold text-blue-600">FitMind</h1>
+          <p className="text-gray-500 mt-1 text-xs">
+            Login to your account
+          </p>
         </div>
 
-        {/* Form Title */}
-        <h2 className="text-2xl font-bold mb-6">Login Form</h2>
+        {/* Form */}
+        <form>
+          {/* Email */}
+          <div className="mb-2">
+            <label className="block text-gray-700 mb-1 text-sm font-medium">
+              Email <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-full px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-400 transition text-sm"
+            />
+          </div>
 
-        {/* Email Field */}
-        <div className="mb-4">
-          <label className="block text-gray-700 mb-1">
-            Email Address <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="email"
-            placeholder="Enter your Email Address"
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-        </div>
+          {/* Password */}
+          <div className="mb-3">
+            <label className="block text-gray-700 mb-1 text-sm font-medium">
+              Password <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              className="w-full px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-400 transition text-sm"
+            />
+          </div>
 
-        {/* Password Field */}
-        <div className="mb-4">
-          <label className="block text-gray-700 mb-1">
-            Password <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="password"
-            placeholder="Enter your Password"
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-        </div>
+          {/* Login Button */}
+          <button
+            type="button"
+            onClick={handleLogin}
+            className="w-full py-1.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium rounded shadow-sm hover:from-blue-600 hover:to-purple-600 transition text-sm"
+          >
+            LOGIN
+          </button>
+        </form>
 
-        {/* Remember + Forgot */}
-        <div className="flex justify-between items-center mb-4">
-          <label className="flex items-center text-gray-700 text-sm">
-            <input type="checkbox" className="mr-2" /> Remember me
-          </label>
-          <a href="#" className="text-blue-500 text-sm hover:underline">
-            Forgot password?
-          </a>
-        </div>
-
-        {/* Login Button */}
-        <button
-          onClick={handleLogin}
-          className="w-full bg-white border border-gray-300 py-2 rounded-lg font-semibold hover:bg-gray-100"
-        >
-          LOGIN
-        </button>
-
-        {/* Signup */}
-        <p className="mt-4 text-center text-sm">
+        {/* Register Link */}
+        <p className="mt-3 text-center text-gray-600 text-xs">
           Not a member?{" "}
-          <Link to="/register" className="text-blue-500 hover:underline">
+          <Link
+            to="/register"
+            className="text-blue-500 font-medium hover:underline"
+          >
             Signup now
           </Link>
         </p>
