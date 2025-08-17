@@ -48,5 +48,6 @@ We are using **GitHub Projects** to manage tasks.
 - Issues are created and assigned to team members
 - Features grouped into milestones
 ### wakatime URL
--Zarin Tasnim Ritu : https://wakatime.com/projects/FitMind
--Shamima Islam Ria : https://wakatime.com/projects/FitMind
+-Zarin Tasnim Ritu : https://wakatime.com/@08b745eb-b39d-4bf2-bff5-73aa8face5ab/projects/mwfqzbvqxo?start=2025-08-11&end=2025-08-17
+
+-Shamima Islam Ria : https://wakatime.com/@3bb182d4-41c6-4d00-85a9-f1754366727c/projects/uxuuvjojko?start=2025-08-11&end=2025-08-17
