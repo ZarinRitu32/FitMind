@@ -1,11 +1,11 @@
-// src/pages/Login.jsx
+
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // এখানে form validation বা API call যোগ করা যাবে
+    
     navigate("/dashboard");
   };
 

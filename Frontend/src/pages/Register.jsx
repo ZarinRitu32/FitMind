@@ -4,7 +4,7 @@ export default function Register() {
   const navigate = useNavigate();
 
   const handleRegister = () => {
-    // এখানে form validation বা API call যোগ করা যাবে
+    
     navigate("/dashboard");
   };
 
