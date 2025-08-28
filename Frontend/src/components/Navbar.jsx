@@ -7,12 +7,12 @@ export default function Navbar() {
   const dispatch = useDispatch();
 
   return (
-    <nav className="bg-gradient-to-r from-blue-500 to-purple-600 shadow-md p-4">
+    <nav className="bg-gray-200 shadow-md p-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link
           to="/"
-          className="text-white font-bold text-2xl hover:opacity-90 transition"
+          className="text-gray-800 font-bold text-2xl hover:opacity-80 transition"
         >
           FitMind
         </Link>
@@ -21,12 +21,12 @@ export default function Navbar() {
         <div className="space-x-6 flex items-center">
           {token ? (
             <>
-              <span className="text-white font-medium">Hello, {user}</span>
+              <span className="text-gray-700 font-medium">Hello, {user}</span>
 
-              {/* Profile Link styled like Login/Register */}
+              {/* Profile Link */}
               <Link
                 to="/profile"
-                className="text-white hover:text-gray-200 font-medium transition"
+                className="text-gray-700 hover:text-gray-900 font-medium transition"
               >
                 Profile
               </Link>
@@ -34,7 +34,7 @@ export default function Navbar() {
               {/* About Us */}
               <Link
                 to="/about"
-                className="text-white hover:text-gray-200 font-medium transition"
+                className="text-gray-700 hover:text-gray-900 font-medium transition"
               >
                 About Us
               </Link>
@@ -42,7 +42,7 @@ export default function Navbar() {
               {/* Contact Us */}
               <Link
                 to="/contact"
-                className="text-white hover:text-gray-200 font-medium transition"
+                className="text-gray-700 hover:text-gray-900 font-medium transition"
               >
                 Contact Us
               </Link>
@@ -60,7 +60,7 @@ export default function Navbar() {
               {/* Login */}
               <Link
                 to="/login"
-                className="text-white hover:text-gray-200 font-medium transition"
+                className="text-gray-700 hover:text-gray-900 font-medium transition"
               >
                 Login
               </Link>
@@ -68,7 +68,7 @@ export default function Navbar() {
               {/* Register */}
               <Link
                 to="/register"
-                className="text-white hover:text-gray-200 font-medium transition"
+                className="text-gray-700 hover:text-gray-900 font-medium transition"
               >
                 Register
               </Link>
@@ -76,7 +76,7 @@ export default function Navbar() {
               {/* About Us */}
               <Link
                 to="/about"
-                className="text-white hover:text-gray-200 font-medium transition"
+                className="text-gray-700 hover:text-gray-900 font-medium transition"
               >
                 About Us
               </Link>
@@ -84,7 +84,7 @@ export default function Navbar() {
               {/* Contact Us */}
               <Link
                 to="/contact"
-                className="text-white hover:text-gray-200 font-medium transition"
+                className="text-gray-700 hover:text-gray-900 font-medium transition"
               >
                 Contact Us
               </Link>
