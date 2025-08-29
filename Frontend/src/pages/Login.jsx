@@ -1,11 +1,9 @@
-
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    
     navigate("/dashboard");
   };
 
@@ -15,9 +13,7 @@ export default function Login() {
         {/* Header */}
         <div className="text-center mb-2">
           <h1 className="text-xl font-bold text-blue-600">FitMind</h1>
-          <p className="text-gray-500 mt-1 text-xs">
-            Login to your account
-          </p>
+          <p className="text-gray-500 mt-1 text-xs">Login to your account</p>
         </div>
 
         {/* Form */}

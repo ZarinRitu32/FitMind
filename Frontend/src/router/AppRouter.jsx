@@ -1,11 +1,8 @@
 // src/router/AppRouter.jsx
 import { Routes, Route, Navigate } from "react-router-dom";
-import App from "../App";
-
-// Pages
+import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import Dashboard from "../pages/Dashboard";
 import Workouts from "../pages/Workouts";
 import Nutrition from "../pages/Nutrition";
 import MentalHealth from "../pages/MentalHealth";
@@ -21,31 +18,28 @@ import YogaFlow from "../pages/YogaFlow";
 export default function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<App />}>
-        {/* Default route → Login */}
-        <Route index element={<Login />} />
+      {/* First page = Dashboard */}
+      <Route path="/" element={<Dashboard />} />
 
-        {/* Public Routes */}
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-        <Route path="about" element={<AboutUs />} />
-        <Route path="contact" element={<ContactUs />} />
+      {/* Public Routes */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/about" element={<AboutUs />} />
+      <Route path="/contact" element={<ContactUs />} />
 
-        {/* After login */}
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="workouts" element={<Workouts />} />
-        <Route path="nutrition" element={<Nutrition />} />
-        <Route path="mental-health" element={<MentalHealth />} />
+      {/* After login (if you add auth later) */}
+      <Route path="/workouts" element={<Workouts />} />
+      <Route path="/nutrition" element={<Nutrition />} />
+      <Route path="/mental-health" element={<MentalHealth />} />
 
-        {/* New Wellness Pages */}
-        <Route path="morning-meditation" element={<MorningMeditation />} />
-        <Route path="deep-breathing" element={<DeepBreathing />} />
-        <Route path="gratitude-journaling" element={<GratitudeJournaling />} />
-        <Route path="yoga-flow" element={<YogaFlow />} />
+      {/* New Wellness Pages */}
+      <Route path="/morning-meditation" element={<MorningMeditation />} />
+      <Route path="/deep-breathing" element={<DeepBreathing />} />
+      <Route path="/gratitude-journaling" element={<GratitudeJournaling />} />
+      <Route path="/yoga-flow" element={<YogaFlow />} />
 
-        {/* Catch-all redirect to login */}
-        <Route path="*" element={<Navigate to="/login" replace />} />
-      </Route>
+      {/* Catch-all redirect to dashboard */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
