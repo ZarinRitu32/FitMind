@@ -1,11 +1,9 @@
-// src/pages/Register.jsx
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function Register() {
   const navigate = useNavigate();
 
-  // Form state
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,7 +12,6 @@ export default function Register() {
   const handleRegister = (e) => {
     e.preventDefault();
 
-    // Simple validation
     if (!fullName || !email || !password || !confirmPassword) {
       alert("Please fill in all required fields.");
       return;
@@ -25,17 +22,17 @@ export default function Register() {
       return;
     }
 
-    // Optional: save name in localStorage
+    // name save kore rakhe
     localStorage.setItem("fullName", fullName);
 
-    // Redirect to Profile page
+    // direct profile page e chole jabe
     navigate("/profile", { state: { fullName } });
   };
 
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-64px)] bg-gradient-to-r from-blue-100 to-purple-100">
       <div className="w-full max-w-xs bg-white rounded-lg shadow-md p-4">
-        {/* Header */}
+    
         <div className="text-center mb-2">
           <h1 className="text-xl font-bold text-blue-600">FitMind</h1>
           <p className="text-gray-500 mt-1 text-xs">
@@ -43,7 +40,7 @@ export default function Register() {
           </p>
         </div>
 
-        {/* Form */}
+      
         <form onSubmit={handleRegister}>
           {/* Full Name */}
           <div className="mb-2">
@@ -110,7 +107,7 @@ export default function Register() {
           </button>
         </form>
 
-        {/* Already have account */}
+        
         <p className="mt-3 text-center text-gray-600 text-xs">
           Already have an account?{" "}
           <Link to="/login" className="text-blue-500 font-medium hover:underline">

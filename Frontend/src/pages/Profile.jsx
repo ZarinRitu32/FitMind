@@ -1,4 +1,3 @@
-// src/pages/Profile.jsx
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -6,7 +5,7 @@ export default function Profile() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Get fullName from Register page state or fallback to localStorage
+  // registation theke full name save kore rakhe
   const fullNameFromState = location.state?.fullName;
   const fullNameFromStorage = localStorage.getItem("fullName");
   const fullName = fullNameFromState || fullNameFromStorage || "User";
@@ -20,7 +19,6 @@ export default function Profile() {
   const handleSave = (e) => {
     e.preventDefault();
 
-    // For now, just log values (can replace with API call)
     console.log({
       fullName,
       age,
@@ -30,25 +28,24 @@ export default function Profile() {
       activityLevel,
     });
 
-    // Optional: mark profile as completed
     localStorage.setItem("profileCompleted", "true");
 
-    // Redirect to dashboard
+
     navigate("/dashboard");
   };
 
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-64px)] bg-gradient-to-r from-blue-100 to-purple-100">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-5">
-        {/* Header */}
+      
         <div className="text-center mb-4">
           <h1 className="text-xl font-bold text-blue-600">FitMind</h1>
           <p className="text-gray-500 mt-1 text-sm">Complete your profile</p>
         </div>
 
-        {/* Profile Form */}
+      
         <form onSubmit={handleSave}>
-          {/* Full Name (readonly) */}
+      
           <div className="mb-3">
             <label className="block text-gray-700 mb-1 text-sm font-medium">Full Name</label>
             <input
@@ -59,7 +56,7 @@ export default function Profile() {
             />
           </div>
 
-          {/* Age */}
+          
           <div className="mb-3">
             <label className="block text-gray-700 mb-1 text-sm font-medium">Age</label>
             <input
@@ -71,7 +68,7 @@ export default function Profile() {
             />
           </div>
 
-          {/* Height */}
+        
           <div className="mb-3">
             <label className="block text-gray-700 mb-1 text-sm font-medium">Height (cm)</label>
             <input
@@ -83,7 +80,7 @@ export default function Profile() {
             />
           </div>
 
-          {/* Current Weight */}
+          
           <div className="mb-3">
             <label className="block text-gray-700 mb-1 text-sm font-medium">Current Weight (kg)</label>
             <input
@@ -95,7 +92,7 @@ export default function Profile() {
             />
           </div>
 
-          {/* Target Weight */}
+        
           <div className="mb-3">
             <label className="block text-gray-700 mb-1 text-sm font-medium">Target Weight (kg)</label>
             <input
@@ -107,7 +104,7 @@ export default function Profile() {
             />
           </div>
 
-          {/* Physical Activity Level */}
+          
           <div className="mb-4">
             <label className="block text-gray-700 mb-1 text-sm font-medium">Physical Activity Level</label>
             <select
@@ -121,7 +118,7 @@ export default function Profile() {
             </select>
           </div>
 
-          {/* Save Button */}
+        
           <button
             type="submit"
             className="w-full py-1.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium rounded shadow-sm hover:from-blue-600 hover:to-purple-600 transition text-sm"

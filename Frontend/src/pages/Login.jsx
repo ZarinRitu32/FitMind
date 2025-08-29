@@ -14,7 +14,7 @@ export default function Login() {
       return;
     }
 
-    // ✅ Check if profile is completed
+    // check kore profile complete kina
     const isProfileCompleted = localStorage.getItem("profileCompleted") === "true";
 
     if (isProfileCompleted) {
