@@ -16,24 +16,27 @@ export default function Profile() {
   const [activityLevel, setActivityLevel] = useState("regular"); 
 
   const handleSave = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const profileData = {
-      fullName,
-      age,
-      gender,
-      height: `${heightFeet} ft ${heightInches} in`,
-      weight,
-      goal,
-      targetWeight: goal === "maintain" ? null : targetWeight,
-      activityLevel,
-    };
-
-    console.log("Profile Data:", profileData);
-
-    localStorage.setItem("profileCompleted", "true");
-    navigate("/dashboard");
+  const profileData = {
+    fullName,
+    age,
+    gender,
+    height: `${heightFeet} ft ${heightInches} in`,
+    weight,
+    goal,
+    targetWeight: goal === "maintain" ? null : targetWeight,
+    activityLevel,
   };
+
+  console.log("Profile Data:", profileData);
+
+  // Save the profile data so homepage can read it
+  localStorage.setItem("userProfile", JSON.stringify(profileData));
+  localStorage.setItem("profileCompleted", "true");
+
+  navigate("/homepage"); // or /dashboard if homepage route is different
+};
 
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-64px)] bg-gradient-to-r from-blue-100 to-purple-100">

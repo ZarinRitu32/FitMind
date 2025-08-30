@@ -4,6 +4,7 @@ import App from "../App";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Profile from "../pages/Profile";
+import Homepage from "../pages/Homepage";  
 import Dashboard from "../pages/Dashboard"; 
 import Workouts from "../pages/Workouts";
 import Nutrition from "../pages/Nutrition";
@@ -28,6 +29,7 @@ export default function AppRouter() {
         <Route path="contact" element={<ContactUs />} />
 
         <Route path="profile" element={<Profile />} />
+        <Route path="homepage" element={<Homepage />} />
 
         
         <Route path="workouts" element={<Workouts />} />
