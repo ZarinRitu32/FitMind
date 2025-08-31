@@ -116,7 +116,7 @@ export default function Workouts() {
 
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-extrabold text-gray-900">
-            🏋️ Gym Workout Library
+             Gym Workout Library
           </h1>
           <p className="text-gray-700 mt-2 text-base">
             Explore 30+ workouts – Strength, Cardio, Core & HIIT.

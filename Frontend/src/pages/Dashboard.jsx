@@ -1,5 +1,5 @@
 // src/pages/Dashboard.jsx
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const quotes = [
@@ -31,7 +31,7 @@ const beginnerCards = [
     title: "Easy Workout Session",
     desc: "Simple routines for beginners",
     image: "https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg",
-    link: "/workout/easy"
+    link: "/workouts/easy"
   },
   {
     title: "5 Days Level Up",
@@ -42,135 +42,78 @@ const beginnerCards = [
 ];
 
 export default function Dashboard() {
-  const [quote, setQuote] = useState("");
+  const [quoteIndex, setQuoteIndex] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    setQuote(quotes[randomIndex]);
+    const interval = setInterval(() => {
+      setQuoteIndex(prev => (prev + 1) % quotes.length);
+    }, 3000); // change quote every 3 seconds
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="flex flex-col">
 
-      {/* Full screen hero */}
+      {/* Hero Section */}
       <div
-        className="w-full min-h-screen bg-cover bg-center flex items-center justify-center text-center relative"
+        className="w-full min-h-screen bg-cover bg-center flex flex-col items-center justify-center text-center relative"
         style={{
           backgroundImage:
             "url('https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg')",
         }}
       >
         <div className="absolute inset-0 bg-black/70"></div>
-        <div className="relative z-10 p-8">
+        <div className="relative z-10 p-8 flex flex-col items-center">
           <h2 className="text-6xl md:text-7xl text-white mb-6 font-semibold leading-tight">
             GET FIT WITH US
           </h2>
-          <p className="text-xl md:text-2xl text-white mb-8 italic leading-snug max-w-2xl mx-auto font-semibold">
-            "{quote}"
+          <p className="text-xl md:text-2xl text-white mb-6 italic leading-snug max-w-2xl mx-auto font-semibold">
+            "{quotes[quoteIndex]}"
           </p>
+
+          {/* Join Button */}
+          <button
+            onClick={() => navigate("/login")}
+            className="bg-white text-black px-10 py-4 rounded-full text-xl font-semibold mt-6 hover:bg-gray-200 transition"
+          >
+            Join
+          </button>
         </div>
       </div>
 
-      {/* Feature cards */}
+      {/* Feature Cards */}
       <div className="mt-6 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-
-          {/* Workouts */}
-          <div
-            className="relative rounded-lg shadow-lg flex flex-col items-center justify-center min-h-[360px] bg-cover bg-center transition-transform transform hover:scale-105"
-            style={{
-              backgroundImage:
-                "url('https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg')",
-            }}
-          >
-            <div className="absolute inset-0 bg-black/50 rounded-lg"></div>
-            <div className="relative z-10 text-center px-4">
-              <h3 className="text-3xl font-semibold text-white mb-2">Workouts</h3>
-              <p className="text-white text-sm md:text-base italic mb-4 font-semibold">
-                {cardQuotes.workouts}
-              </p>
-              <Link
-                to="/workouts"
-                className="bg-white text-black px-6 py-2 rounded-full text-lg hover:bg-gray-200 transition"
-              >
-                Explore
-              </Link>
-            </div>
-          </div>
-
-          {/* Nutrition */}
-          <div
-            className="relative rounded-lg shadow-lg flex flex-col items-center justify-center min-h-[360px] bg-cover bg-center transition-transform transform hover:scale-105"
-            style={{
-              backgroundImage:
-                "url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg')",
-            }}
-          >
-            <div className="absolute inset-0 bg-black/50 rounded-lg"></div>
-            <div className="relative z-10 text-center px-4">
-              <h3 className="text-3xl font-semibold text-white mb-2">Nutrition</h3>
-              <p className="text-white text-sm md:text-base italic mb-4 font-semibold">
-                {cardQuotes.nutrition}
-              </p>
-              <Link
-                to="/nutrition"
-                className="bg-white text-black px-6 py-2 rounded-full text-lg hover:bg-gray-200 transition"
-              >
-                Explore
-              </Link>
-            </div>
-          </div>
-
-          {/* Mental Health */}
-          <div
-            className="relative rounded-lg shadow-lg flex flex-col items-center justify-center min-h-[360px] bg-cover bg-center transition-transform transform hover:scale-105"
-            style={{
-              backgroundImage:
-                "url('https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg')",
-            }}
-          >
-            <div className="absolute inset-0 bg-black/50 rounded-lg"></div>
-            <div className="relative z-10 text-center px-4">
-              <h3 className="text-3xl font-semibold text-white mb-2">Mental Health</h3>
-              <p className="text-white text-sm md:text-base italic mb-4 font-semibold">
-                {cardQuotes.mental}
-              </p>
-              <Link
-                to="/mental-health"
-                className="bg-white text-black px-6 py-2 rounded-full text-lg hover:bg-gray-200 transition"
-              >
-                Explore
-              </Link>
-            </div>
-          </div>
-
-          {/* Community */}
-          <div
-            className="relative rounded-lg shadow-lg flex flex-col items-center justify-center min-h-[360px] bg-cover bg-center transition-transform transform hover:scale-105"
-            style={{
-              backgroundImage:
-                "url('https://images.pexels.com/photos/3184406/pexels-photo-3184406.jpeg')",
-            }}
-          >
-            <div className="absolute inset-0 bg-black/50 rounded-lg"></div>
-            <div className="relative z-10 text-center px-4">
-              <h3 className="text-3xl font-semibold text-white mb-2">Community</h3>
-              <p className="text-white text-sm md:text-base italic mb-4 font-semibold">
-                {cardQuotes.community}
-              </p>
-              <Link
-                to="/community"
-                className="bg-white text-black px-6 py-2 rounded-full text-lg hover:bg-gray-200 transition"
-              >
-                Explore
-              </Link>
-            </div>
-          </div>
-
+          <FeatureCard
+            title="Workouts"
+            desc={cardQuotes.workouts}
+            image="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg"
+            link="/workouts"
+          />
+          <FeatureCard
+            title="Nutrition"
+            desc={cardQuotes.nutrition}
+            image="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
+            link="/nutrition"
+          />
+          <FeatureCard
+            title="Mental Health"
+            desc={cardQuotes.mental}
+            image="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg"
+            link="/mental-health"
+          />
+          <FeatureCard
+            title="Community"
+            desc={cardQuotes.community}
+            image="https://images.pexels.com/photos/3184406/pexels-photo-3184406.jpeg"
+            link="/community"
+          />
         </div>
       </div>
 
-      {/* Beginner section */}
+      {/* Beginner Section */}
       <div className="mt-8 px-2 md:px-4 text-left">
         <h2 className="text-xl md:text-2xl font-semibold mb-6">
           Are you a beginner? Let's start with us!
@@ -197,6 +140,29 @@ export default function Dashboard() {
             </div>
           ))}
         </div>
+      </div>
+    </div>
+  );
+}
+
+function FeatureCard({ title, desc, image, link }) {
+  return (
+    <div
+      className="relative rounded-lg shadow-lg flex flex-col items-center justify-center min-h-[360px] bg-cover bg-center transition-transform transform hover:scale-105"
+      style={{ backgroundImage: `url('${image}')` }}
+    >
+      <div className="absolute inset-0 bg-black/50 rounded-lg"></div>
+      <div className="relative z-10 text-center px-4">
+        <h3 className="text-3xl font-semibold text-white mb-2">{title}</h3>
+        <p className="text-white text-sm md:text-base italic mb-4 font-semibold">
+          {desc}
+        </p>
+        <Link
+          to={link}
+          className="bg-white text-black px-6 py-2 rounded-full text-lg hover:bg-gray-200 transition"
+        >
+          Explore
+        </Link>
       </div>
     </div>
   );
