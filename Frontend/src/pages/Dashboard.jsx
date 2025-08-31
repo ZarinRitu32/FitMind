@@ -1,4 +1,3 @@
-// src/pages/Dashboard.jsx
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -37,7 +36,7 @@ const beginnerCards = [
     title: "5 Days Level Up",
     desc: "Step up your fitness in 5 days",
     image: "https://images.pexels.com/photos/4498550/pexels-photo-4498550.jpeg",
-    link: "/challenge/5-days"
+    link: "/challenge/5-days"   // ✅ Router এর সাথে match করানো হয়েছে
   }
 ];
 
