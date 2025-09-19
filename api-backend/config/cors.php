@@ -7,28 +7,35 @@ return [
     | Cross-Origin Resource Sharing (CORS) Configuration
     |--------------------------------------------------------------------------
     |
-    | Here you may configure your settings for cross-origin resource sharing
-    | or "CORS". This determines what cross-origin operations may execute
-    | in web browsers. You are free to adjust these settings as needed.
-    |
-    | To learn more: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+    | This configuration allows your frontend to access your Laravel API.
     |
     */
 
+    // Which routes should support CORS
     'paths' => ['*'],
 
+    // Which HTTP methods are allowed
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:3000')],
+    // Which origins are allowed (frontend URLs)
+    'allowed_origins' => [
+        'http://localhost:5174',   // your current frontend
+        'http://localhost:5173',   // optional: previous frontend port
+    ],
 
+    // Allowed origins using regex patterns (optional)
     'allowed_origins_patterns' => [],
 
+    // Which headers can be sent from frontend
     'allowed_headers' => ['*'],
 
+    // Which headers can be read by frontend
     'exposed_headers' => [],
 
+    // How long the results of preflight requests can be cached
     'max_age' => 0,
 
+    // Allow sending cookies/auth headers
     'supports_credentials' => true,
 
 ];
