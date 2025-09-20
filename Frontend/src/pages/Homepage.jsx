@@ -1,26 +1,27 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Chatbot from "./Chatbot";
 export default function Homepage() {
-  const[showProfile,setShowProfile]=useState(false);
-  const[showProgress,setShowProgress]=useState(false);
-  const[profileData,setProfileData]=useState({});
-  const navigate=useNavigate();
+  const [showProfile, setShowProfile] = useState(false);
+  const [showProgress, setShowProgress] = useState(false);
+  const [profileData, setProfileData] = useState({});
+  const navigate = useNavigate();
 
-  useEffect(()=>{
+  useEffect(() => {
     const storedProfile = JSON.parse(localStorage.getItem("userProfile")) || {};
     setProfileData(storedProfile);
   }, []);
 
-  useEffect(()=>{
-    const handleStorageChange=()=>{
-      const updatedProfile=JSON.parse(localStorage.getItem("userProfile")) || {};
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const updatedProfile =
+        JSON.parse(localStorage.getItem("userProfile")) || {};
       setProfileData(updatedProfile);
     };
 
-    window.addEventListener("storage",handleStorageChange);
+    window.addEventListener("storage", handleStorageChange);
 
-    return()=>window.removeEventListener("storage",handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
   return (
@@ -28,9 +29,9 @@ export default function Homepage() {
       <div className="flex justify-between items-center mb-5">
         <button
           className="flex items-center space-x-1 px-3 py-1 bg-white rounded shadow hover:bg-gray-100"
-          onClick={()=>navigate("/profile")}
+          onClick={() => navigate("/profile")}
         >
-           Back
+          Back
         </button>
 
         <h1 className="text-xl font-bold text-green-700">FitMind Homepage</h1>
@@ -38,7 +39,7 @@ export default function Homepage() {
         <div className="flex space-x-2">
           <button
             className="flex items-center space-x-1 px-3 py-1 bg-white rounded shadow hover:bg-gray-100"
-            onClick={()=>{
+            onClick={() => {
               setShowProfile(!showProfile);
               setShowProgress(false);
             }}
@@ -49,7 +50,7 @@ export default function Homepage() {
 
           <button
             className="flex items-center space-x-1 px-3 py-1 bg-white rounded shadow hover:bg-gray-100"
-            onClick={()=>{
+            onClick={() => {
               setShowProgress(!showProgress);
               setShowProfile(false);
             }}
@@ -89,7 +90,7 @@ export default function Homepage() {
                 <td className="border p-2 font-semibold">Goal</td>
                 <td className="border p-2">{profileData.goal}</td>
               </tr>
-              {profileData.goal !=="maintain"&&(
+              {profileData.goal !== "maintain" && (
                 <tr>
                   <td className="border p-2 font-semibold">Target Weight</td>
                   <td className="border p-2">{profileData.targetWeight}</td>
@@ -107,11 +108,18 @@ export default function Homepage() {
       {showProgress && (
         <div className="bg-white p-4 rounded shadow-md w-full max-w-md">
           <h2 className="font-bold text-lg mb-3">Progress Report</h2>
-          <p><strong>Current Weight:</strong> {profileData.weight} kg</p>
+          <p>
+            <strong>Current Weight:</strong> {profileData.weight} kg
+          </p>
           {profileData.goal !== "maintain" && (
-            <p><strong>Target Weight:</strong> {profileData.targetWeight} kg</p>
+            <p>
+              <strong>Target Weight:</strong> {profileData.targetWeight} kg
+            </p>
           )}
-          <p><strong>Goal:</strong>{profileData.goal}</p>
+          <p>
+            <strong>Goal:</strong>
+            {profileData.goal}
+          </p>
           <p className="mt-2 text-green-600">
             Progress tracking feature coming soon 🚀
           </p>
@@ -120,8 +128,13 @@ export default function Homepage() {
 
       <div className="mt-5">
         <h2 className="text-lg font-semibold">Welcome to FitMind!</h2>
-        <p>Here you can access Workouts, Nutrition, Mental Health resources, and more.</p>
+        <p>
+          Here you can access Workouts, Nutrition, Mental Health resources, and
+          more.
+        </p>
       </div>
+      {/* Chatbot include করা */}
+      <Chatbot />
     </div>
   );
 }
