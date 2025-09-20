@@ -1,3 +1,4 @@
+// src/pages/Dashboard.jsx
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -9,14 +10,14 @@ const quotes = [
   "Mental strength is not the absence of fear, but the will to overcome it.",
   "Discipline is choosing between what you want now and what you want most.",
   "Every workout counts. Don’t stop now.",
-  "You are one workout away from a good mood."
+  "You are one workout away from a good mood.",
 ];
 
 const cardQuotes = {
   workouts: "Sweat today, shine tomorrow.",
   nutrition: "Eat better, feel better.",
   mental: "A healthy mind fuels a healthy body.",
-  community: "Stronger together, every step of the way."
+  community: "Stronger together, every step of the way.",
 };
 
 const beginnerCards = [
@@ -24,20 +25,20 @@ const beginnerCards = [
     title: "15 Days Challenge",
     desc: "Kickstart your weight loss journey",
     image: "https://images.pexels.com/photos/3757957/pexels-photo-3757957.jpeg",
-    link: "/challenge/15-days"
+    link: "/challenge/15-days",
   },
   {
     title: "Easy Workout Session",
     desc: "Simple routines for beginners",
     image: "https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg",
-    link: "/workouts/easy"
+    link: "/workouts/easy",
   },
   {
     title: "5 Days Level Up",
     desc: "Step up your fitness in 5 days",
     image: "https://images.pexels.com/photos/4498550/pexels-photo-4498550.jpeg",
-    link: "/challenge/5-days"   // ✅ Router এর সাথে match করানো হয়েছে
-  }
+    link: "/challenge/5-days", // ✅ Router matches
+  },
 ];
 
 export default function Dashboard() {
@@ -46,7 +47,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setQuoteIndex(prev => (prev + 1) % quotes.length);
+      setQuoteIndex((prev) => (prev + 1) % quotes.length);
     }, 3000); // change quote every 3 seconds
 
     return () => clearInterval(interval);
@@ -107,7 +108,7 @@ export default function Dashboard() {
             title="Community"
             desc={cardQuotes.community}
             image="https://images.pexels.com/photos/3184406/pexels-photo-3184406.jpeg"
-            link="/community"
+            link="/community"   // ✅ Goes to CommunityPage
           />
         </div>
       </div>

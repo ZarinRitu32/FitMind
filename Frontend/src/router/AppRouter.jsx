@@ -16,6 +16,7 @@ import Workouts from "../pages/Workouts";
 import EasyWorkout from "../pages/EasyWorkout";
 import Nutrition from "../pages/Nutrition";
 import MentalHealth from "../pages/MentalHealth";
+import CommunityPage from "../pages/CommunityPage"; // ✅ Add this import
 
 // Info Pages
 import AboutUs from "../pages/AboutUs";
@@ -23,7 +24,7 @@ import ContactUs from "../pages/ContactUs";
 
 // Challenges
 import Challenge15Days from "../pages/Challenge15Days";
-import LevelUp from "../pages/LevelUp"; // ✅ 5 Days Challenge
+import LevelUp from "../pages/LevelUp";
 
 // Mental Health Activities
 import MorningMeditation from "../pages/MorningMeditation";
@@ -57,10 +58,11 @@ export default function AppRouter() {
         {/* Other Sections */}
         <Route path="nutrition" element={<Nutrition />} />
         <Route path="mental-health" element={<MentalHealth />} />
+        <Route path="community" element={<CommunityPage />} /> {/* ✅ Add this */}
 
         {/* Challenges */}
         <Route path="challenge/15-days" element={<Challenge15Days />} />
-        <Route path="challenge/5-days" element={<LevelUp />} /> {/* ✅ 5 Days */}
+        <Route path="challenge/5-days" element={<LevelUp />} />
 
         {/* Mental Health Activities */}
         <Route path="morning-meditation" element={<MorningMeditation />} />
