@@ -1,52 +1,101 @@
-# FitMind
+Project Title: FitMind – A Fitness & Wellness Website
 
-##  Project Objective
-To help users manage their fitness, diet, and mental well-being through personalized tracking, motivational AI messages, and weekly reports.
+Team Members:
+Mohsina Rahman Mirza – Email : mohsina.cse.20220204027@aust.edu
+Zarin Tasnim Ritu – Email : zarin.cse.20220204032@aust.edu
+Anjum Afrin – Email : anjum.cse.20220204044@aust.edu
+Shamima Islam Ria – Email: shamima.cse.20220204050@aust.edu
 
-##  Target Audience
-- University students
-- Young professionals
-- Fitness-conscious individuals
 
-##  Core Features
-- **Login & Register**: Email, password, and goal selection (lose/gain weight)
-- **Dashboard**: Progress summary, mood of the day, meal plan preview
-- **Meal Tracker**: Add food items, calorie count, meal suggestions
-- **Fitness Tracker**: Log workouts, track sleep & steps
-- **Mental Wellness**: Mood emoji selector, journal area, **AI-based motivational messages**
-- **Weekly Report**: Charts for calories, mood, workouts
-- **Profile**: Personal details (age, height, weight, goal)
 
-###  AI Feature:
-- Generate motivational messages using sentiment analysis on mood/journal input.
+ 
+Table of Contents
+1.	Project Description
+2.	Workflow Overview
+3.	Main Features
+4.	Technologies Used
+5.	System Architecture
+6.	Setup Guidelines
+o	Backend
+o	Frontend
+7.	Running the Application
+8.	Deployment Status & Tests
+9.	Contribution Table
+10.	Screenshots
+11.	Limitations / Known Issues
 
-##  Technology Stack
-| Layer       | Technology     |
-|------------|----------------|
-| Frontend   | React (Vite + Tailwind) |
-| Backend    | Laravel (PHP) |
-| Database   | MySQL          |
-| Charts     | Chart.js or Recharts |
-| AI         | OpenAI API / HuggingFace Transformers |
 
-##  UI Design
-https://www.canva.com/design/DAGuUhfP42Q/5iCrUJAQqtBaqp7BFGTl7Q/edit?utm_content=DAGuUhfP42Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
+ 
 
----
+1. Project Description
+FitMind is a fitness and wellness web application designed to help users stay healthy through personalized workout plans, nutrition tracking, and mental well-being support.
+It addresses the lack of structured fitness guidance by offering:
+•	Workout routines with instructional videos tailored to user goals.
+•	Meal plans with calorie and nutrient tracking.
+•	A mental health chatbot for stress management, motivation, and mindfulness support.
 
-## 🛠️ Project Management
+2. Workflow Overview
+1.	User registers/signs in.
+2.	Chooses fitness goals (weight loss, strength, mindfulness, etc.).
+3.	Gets recommendations for workouts (with videos), diet plans, and mental health support via chatbot.
+3 Main Features
+•	User registration/login with authentication.
+•	Workout plans with instructional videos tailored to fitness goals.
+•	Diet and nutrition plans for healthy lifestyle support.
+•	Mental health chatbot for meditation, stress relief, and motivation.
+•	AI-based recommendations (future enhancement).
 
-We are using **GitHub Projects** to manage tasks.
 
-### 🧩 Milestones:
-- **Checkpoint 1 (Week 2)**: Setup, Login/Register, Dashboard
-- **Checkpoint 2 (Week 4)**: Meal Tracker + Fitness Tracker
-- **Checkpoint 3 (Week 6)**: Mental Wellness + AI + Reports
-- **Final (Week 7)**: Profile, UI Polish, Final testing
 
-### ✅ Task Management
-- Issues are created and assigned to team members
-- Features grouped into milestones
+4. Technologies Used
+•	Frontend: React.js, Tailwind CSS
+•	Backend: Laravel 
+•	Database: MySQL
+•	APIs: RESTful APIs
+•	Other Tools: GitHub, Vercel (frontend), Render (backend)
+
+     5. System Architecture
+•	Frontend (React.js): User interface for dashboards, and workout plans.
+•	Backend (Laravel): API handling authentication, logic, and plan generation.
+•	Database (MySQL): Stores users data
+   6. Setup Guidelines
+Backend
+cd backend
+composer install
+cp .env.example .env
+php artisan migrate
+php artisan serve
+
+Frontend
+cd frontend
+npm install
+cp .env.example .env
+npm start
+
+
+7. Running the Application
+•	Start backend server (php artisan serve).
+•	Start frontend server (npm start).
+•	    Access the app at   APP_URL=http://localhost:8000 FRONTEND_URL=http://localhost:5173
+
+8. Deployment Status & Tests
+Component	Is Deployed?	Is Dockerized?	Unit Tests Added?	Is AI feature implemented?
+Backend	Yes	Yes	Yes	yes
+Frontend	Yes	Yes	Yes	yes
+
+9. Contribution Table
+Metric	Total	Ritu	Ria	Mirza	Anjum
+WakaTime Contribution (hrs)		14 hours  	 19 hours	18 hours	8 hours
+Percent Contribution (%)	100%	 25%	25%	25%	25%
+
+10. Screenshots
+
+        
+
+
+1. Limitations / Known Issues
+•	AI recommendations are basic and need more refinement.
+
 ### wakatime URL
 -Zarin Tasnim Ritu : https://wakatime.com/@08b745eb-b39d-4bf2-bff5-73aa8face5ab/projects/mwfqzbvqxo?start=2025-08-11&end=2025-08-17
 
